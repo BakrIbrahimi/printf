@@ -9,7 +9,7 @@
  * Return: void
  */
 
-void	print(char c, va_list pr, int *i)
+void print(char c, va_list pr, int *i)
 {
 	if (c == '%')
 		(*i) += _putchar('%');
@@ -17,6 +17,8 @@ void	print(char c, va_list pr, int *i)
 		(*i) += _putchar(va_arg(pr, int));
 	else if (c == 's')
 		(*i) += _putstr(va_arg(pr, char *));
+	else if (c == 'd')
+		(*i) += _putnumber(va_arg(pr, int));
 	else
 		(*i) += _putchar(c);
 }
