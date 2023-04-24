@@ -8,28 +8,27 @@
  */
 int	_printf(const char *format, ...)
 {
-	int	i;
-	int	len;
-	va_list	args;
+	int		i;
+	va_list	pr;
 
 	i = 0;
-	len = 0;
-	if (!format || (format[0] == '%' && !format[1]))
-		return (-1);
-	va_start(args, format);
-	while (format[i])
+	va_start(pr, format);
+	while (*format)
 	{
-		if (format[i] == '%')
+		if (*format == '%')
 		{
-			i++;
-			if (flags(&format[i], &len))
-				i++;
-			_if(args, format[i], &len);
+			format++;
+			if (*format == '\0')
+				return (i);
+			print(*format, pr, &i);
 		}
 		else
-			len = len + _putchar(format[i]);
-		i++;
+		{
+			_putchar(*format);
+			i++;
+		}
+		format++;
 	}
-	va_end(args);
-	return (len);
+	va_end(pr);
+	return (i);
 }

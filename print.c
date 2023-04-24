@@ -2,14 +2,14 @@
 
 /**
  * print - checks specifiers
- * @args: arguments líst
- * @type: specifier
- * @len: string length
+ * @pr: arguments líst
+ * @c: specifier
+ * @i: string length
  *
  * Return: void
  */
 
-void	print(va_list args, char type, int *len)
+void	print(char c, va_list pr, int *i)
 {
 	if (c == '%')
 		(*i) += _putchar('%');
@@ -18,5 +18,5 @@ void	print(va_list args, char type, int *len)
 	else if (c == 's')
 		(*i) += _putstr(va_arg(pr, char *));
 	else
-		(*i) += ft_putchar(c);
+		(*i) += _putchar(c);
 }
