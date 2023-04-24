@@ -17,7 +17,7 @@ void print(char c, va_list pr, int *i)
 		(*i) += _putchar(va_arg(pr, int));
 	else if (c == 's')
 		(*i) += _putstr(va_arg(pr, char *));
-	else if (c == 'd')
+	else if (c == 'd' || c == 'i')
 		(*i) += _putnumber(va_arg(pr, int));
 	else
 		(*i) += _putchar(c);
