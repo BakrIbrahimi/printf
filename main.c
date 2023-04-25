@@ -20,5 +20,6 @@ int main(void)
 	printf("hello [%c] oh\n", '\n');
 	_printf("hello [%c] oh\n", '\n');
 	_printf("hello [%d] oh\n", -55);
+	_printf("%b\n", 98);
 	return (0);
 }
