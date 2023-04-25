@@ -7,6 +7,13 @@
  *
  * Return: 1 if puts something, 0 if not
  */
+/**
+ * flags - check flags
+ * @type: specifier
+ * @len: string lenght
+ *
+ * Return: 1 if puts something, 0 if not
+ */
 int	flags(const char *type, int *len)
 {
 	if (*type == ' ')
