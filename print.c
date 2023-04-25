@@ -47,6 +47,8 @@ void	print2(va_list args, char type, int *len)
 		_hexalower(va_arg(args, unsigned int), len);
 	else if (type == 'X')
 		_hexaupper(va_arg(args, unsigned int), len);
+	else if (type == 'S')
+		*len += _non_printable(va_arg(args, char *));
 	else
 	{
 		(*len) = (*len) + _putchar('%');

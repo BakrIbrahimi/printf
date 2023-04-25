@@ -22,5 +22,7 @@ void	print2(va_list args, char type, int *len);
 int	print_octal(unsigned int num);
 void	_hexalower(unsigned long num, int *len);
 void	_hexaupper(unsigned long num, int *len);
+int	char_to_upper_hex(int num, int *len);
+int	_non_printable(char *s);
 
 #endif
