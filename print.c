@@ -25,5 +25,25 @@ void	print(va_list args, char type, int *len)
 	else if (type == 'b')
 		print_binary(va_arg(args, int), len);
 	else
-		(*len) += _putchar(type);
+		print2(args, type, len);
+}
+
+/**
+ * print2 - checks specifiers
+ * @args: arguments líst
+ * @type: specifier
+ * @len: string length
+ *
+ * Return: void
+ */
+
+void	print2(va_list args, char type, int *len)
+{
+	if (type == 'u')
+		_unsigned_int(va_arg(args, unsigned int), len);
+	else
+	{
+		(*len) = (*len) + _putchar('%');
+		(*len) = (*len) + _putchar(type);
+	}
 }
