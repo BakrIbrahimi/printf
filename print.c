@@ -2,23 +2,21 @@
 
 /**
  * print - checks specifiers
- * @pr: arguments líst
- * @c: specifier
- * @i: string length
+ * @args: arguments líst
+ * @type: specifier
+ * @len: string length
  *
  * Return: void
  */
 
-void print(char c, va_list pr, int *i)
+void	print(va_list args, char type, int *len)
 {
-	if (c == '%')
-		(*i) += _putchar('%');
-	else if (c == 'c')
-		(*i) += _putchar(va_arg(pr, int));
-	else if (c == 's')
-		(*i) += _putstr(va_arg(pr, char *));
-	else if (c == 'd' || c == 'i')
-		(*i) += _putnumber(va_arg(pr, int));
+	if (type == '%')
+		(*len) += _putchar('%');
+	else if (type == 'c')
+		(*len) += _putchar(va_arg(args, int));
+	else if (type == 's')
+		(*len) += _putstr(va_arg(args, char *));
 	else
-		(*i) += _putchar(c);
+		(*len) += _putchar(type);
 }
