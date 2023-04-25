@@ -18,5 +18,7 @@ int print_binary(unsigned int num, int *len);
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 void rev_string(char *s);
 void	_unsigned_int(unsigned long n, int *len);
+void	print2(va_list args, char type, int *len);
+int print_octal(unsigned int num, int *len);
 
 #endif

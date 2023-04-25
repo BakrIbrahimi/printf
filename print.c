@@ -24,6 +24,8 @@ void	print(va_list args, char type, int *len)
 		print_num(va_arg(args, int), len);
 	else if (type == 'b')
 		print_binary(va_arg(args, int), len);
+	else if (type == 'o')
+		(*len) = (*len) + _octal(va_arg(args, int));
 	else
 		print2(args, type, len);
 }
