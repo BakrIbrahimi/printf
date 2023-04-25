@@ -22,6 +22,8 @@ void	print(va_list args, char type, int *len)
 		(*len) += _puts(va_arg(args, char *));
 	else if (type == 'd' || type == 'i')
 		print_num(va_arg(args, int), len);
+	else if (type == 'b')
+		print_binary(va_arg(args, int), len);
 	else
 		(*len) += _putchar(type);
 }
