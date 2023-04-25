@@ -18,7 +18,7 @@ void	print(va_list args, char type, int *len)
 	else if (type == 's')
 		(*len) += _puts(va_arg(args, char *));
 	else if (type == 'd' || type == 'i')
-		(*len) += _putnumber(va_arg(args, int));
+		print_num(va_arg(args, int), len);
 	else
 		(*len) += _putchar(type);
 }
