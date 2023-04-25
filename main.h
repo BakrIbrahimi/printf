@@ -13,8 +13,10 @@ char *_convert(int num);
 
 int _printf(const char *format, ...);
 int _putchar(char c);
-int _putstr(char *str);
+int	_puts(char *str);
 int _putnumber(int n);
 void print(va_list args, char type, int *len);
+int flags(const char *type, int *len);
+void	print_num(long n, int *len);
 
 #endif

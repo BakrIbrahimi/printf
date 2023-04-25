@@ -1,13 +1,13 @@
 #include "main.h"
 
 /**
- * _putstr - Print a string
+ * _puts - Print a string
  * @str: Our string
  *
  * Return: the string length
  */
 
-int	_putstr(char *str)
+int	_puts(char *str)
 {
 	int	len;
 
