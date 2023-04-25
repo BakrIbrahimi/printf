@@ -19,6 +19,8 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 void rev_string(char *s);
 void	_unsigned_int(unsigned long n, int *len);
 void	print2(va_list args, char type, int *len);
-int print_octal(unsigned int num, int *len);
+int	print_octal(unsigned int num);
+void	_hexalower(unsigned long num, int *len);
+void	_hexaupper(unsigned long num, int *len);
 
 #endif

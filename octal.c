@@ -1,12 +1,12 @@
 #include "main.h"
 
 /**
- * _octal - prints octal number
+ * print_octal - prints octal number
  * @num: the number
  * Return: lenght of number printed
  */
 
-int	_octal(unsigned int num)
+int	print_octal(unsigned int num)
 {
 	int		r;
 	int		i;

@@ -25,7 +25,7 @@ void	print(va_list args, char type, int *len)
 	else if (type == 'b')
 		print_binary(va_arg(args, int), len);
 	else if (type == 'o')
-		(*len) = (*len) + _octal(va_arg(args, int));
+		(*len) = (*len) + print_octal(va_arg(args, int));
 	else
 		print2(args, type, len);
 }
@@ -43,6 +43,10 @@ void	print2(va_list args, char type, int *len)
 {
 	if (type == 'u')
 		_unsigned_int(va_arg(args, unsigned int), len);
+	else if (type == 'x')
+		_hexalower(va_arg(args, unsigned int), len);
+	else if (type == 'X')
+		_hexaupper(va_arg(args, unsigned int), len);
 	else
 	{
 		(*len) = (*len) + _putchar('%');
