@@ -24,5 +24,6 @@ void	_hexalower(unsigned long num, int *len);
 void	_hexaupper(unsigned long num, int *len);
 int	char_to_upper_hex(int num, int *len);
 int	_non_printable(char *s);
+int print_rev(char *s);
 
 #endif

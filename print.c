@@ -49,6 +49,8 @@ void	print2(va_list args, char type, int *len)
 		_hexaupper(va_arg(args, unsigned int), len);
 	else if (type == 'S')
 		*len += _non_printable(va_arg(args, char *));
+	else if (type == 'r')
+		*len += print_rev(va_arg(args, char *));
 	else if (type == 'p')
 	{
 		void *p = va_arg(args, void *);
