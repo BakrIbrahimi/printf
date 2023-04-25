@@ -49,6 +49,18 @@ void	print2(va_list args, char type, int *len)
 		_hexaupper(va_arg(args, unsigned int), len);
 	else if (type == 'S')
 		*len += _non_printable(va_arg(args, char *));
+	else if (type == 'p')
+	{
+		void *p = va_arg(args, void *);
+
+		if (!p)
+			*len += _puts("(nil)");
+		else
+		{
+			(*len) += _puts("0x");
+			_hexalower((unsigned long)p, len);
+		}
+	}
 	else
 	{
 		(*len) = (*len) + _putchar('%');
