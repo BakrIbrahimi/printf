@@ -2,25 +2,25 @@
 
 /**
  * _puts - Print a string
- * @str: Our string
+ * @str: The string to print
  *
  * Return: the string length
  */
 
 int	_puts(char *str)
 {
-	int	len;
+	int	l;
 
-	len = 0;
+	l = 0;
 	if (!str)
 	{
 		write(1, "(null)", 6);
 		return (6);
 	}
-	while (str[len])
+	while (str[l])
 	{
-		write(1, &str[len], 1);
-		len++;
+		write(1, &str[l], 1);
+		l++;
 	}
-	return (len);
+	return (l);
 }

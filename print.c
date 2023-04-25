@@ -12,7 +12,10 @@
 void	print(va_list args, char type, int *len)
 {
 	if (type == '%')
-		(*len) += _putchar('%');
+	{
+		_putchar('%');
+		(*len)++;
+	}
 	else if (type == 'c')
 		(*len) += _putchar(va_arg(args, int));
 	else if (type == 's')

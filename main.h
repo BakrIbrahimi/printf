@@ -7,10 +7,6 @@
 #include <stdarg.h>
 #include <limits.h>
 
-int _strlen(char *s);
-void _reverse(char *s, int length);
-char *_convert(int num);
-
 int _printf(const char *format, ...);
 int _putchar(char c);
 int	_puts(char *str);
