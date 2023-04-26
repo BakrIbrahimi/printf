@@ -1,15 +1,13 @@
 #include "main.h"
 
 /**
- * print - checks specifiers
+ * custom_specifiers - checks custom specifiers
  * @args: arguments líst
  * @type: specifier
  * @len: string length
- *
- * Return: void
  */
 
-void	print(va_list args, char type, int *len)
+void	custom_specifiers(va_list args, char type, int *len)
 {
 	if (type == '%')
 	{
@@ -22,35 +20,14 @@ void	print(va_list args, char type, int *len)
 		(*len) += _puts(va_arg(args, char *));
 	else if (type == 'd' || type == 'i')
 		print_num(va_arg(args, int), len);
-	else if (type == 'b')
-		print_binary(va_arg(args, int), len);
 	else if (type == 'o')
 		(*len) = (*len) + print_octal(va_arg(args, int));
-	else
-		print2(args, type, len);
-}
-
-/**
- * print2 - checks specifiers
- * @args: arguments líst
- * @type: specifier
- * @len: string length
- *
- * Return: void
- */
-
-void	print2(va_list args, char type, int *len)
-{
-	if (type == 'u')
+	else if (type == 'u')
 		_unsigned_int(va_arg(args, unsigned int), len);
 	else if (type == 'x')
 		_hexalower(va_arg(args, unsigned int), len);
 	else if (type == 'X')
 		_hexaupper(va_arg(args, unsigned int), len);
-	else if (type == 'S')
-		*len += _non_printable(va_arg(args, char *));
-	else if (type == 'r')
-		*len += print_rev(va_arg(args, char *));
 	else if (type == 'p')
 	{
 		void *p = va_arg(args, void *);
@@ -62,7 +39,28 @@ void	print2(va_list args, char type, int *len)
 			(*len) += _puts("0x");
 			_hexalower((unsigned long)p, len);
 		}
-	}
+	}		
+	else
+		non_custom_specifiers(args, type, len);
+}
+
+/**
+ * non_custom_specifiers- check non custom specifiers
+ * @args: argument list
+ * @type: specifier
+ * @len: string lenght
+ */
+
+void	non_custom_specifiers(va_list args, char type, int *len)
+{
+	if (type == 'S')
+		*len += _non_printable(va_arg(args, char *));
+	else if (type == 'r')
+		*len += print_rev(va_arg(args, char *));
+	else if (type == 'b')
+		print_binary(va_arg(args, int), len);
+	else if (type == 'R')
+		*len += rot13(va_arg(args, char *));
 	else
 	{
 		(*len) = (*len) + _putchar('%');

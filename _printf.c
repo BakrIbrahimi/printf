@@ -61,7 +61,7 @@ int	_printf(const char *format, ...)
 			i++;
 			if (flags(&format[i], &len))
 				i++;
-			print(args, format[i], &len);
+			custom_specifiers(args, format[i], &len);
 		}
 		else
 			len = len + _putchar(format[i]);
